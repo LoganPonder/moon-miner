@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap.min (10).css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="container-fluid">
+        HEADER
+    </header>
+
+    <main class="container-fluid bg-primary text-center text-white">
+        <!-- SCORE -->
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="stats__title  display-4">STATS</div>
+                <div class="stats border p-4">
+                    <p>POINTS PER SECOND: <span id="ppp">0</span></p>
+                    <p>CURRENT POINT MULTIPLIER: x<span id="multiplier">1</span></p>
+                </div>
+            </div>
+
+            <div class="col-md-4 display-4">
+                
+            </div>
+        </div>
+        <!-- IMG -->
+        <div class="row">
+            <div class="col">
+                <img src="//placehold.it//300x400" alt="clickable-img" onclick="addPoint()">
+            </div>
+        </div>
+
+        <!-- ITEMS -->
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="upgrades">
+                    <h2 class="upgrades__title">UPGRADES</h2>
+                    <div class="upgrades__items border">
+                        <div class="upgrades__item d-flex justify-content-between p-4">
+                                <button class="btn btn-warning" onclick="buyItem('item1')">ITEM 1</button> <p>COST: -<span id="item1-price">1</span> | 2x</p>
+                                <button class="btn btn-warning" onclick="buyItem('item2')">ITEM 2</button> <p>COST: -<span id="item2-price">2</span> | 3x</p>
+                        </div>
+                        <div class="upgrades__item d-flex justify-content-between p-4">
+                                <button class="btn btn-warning" onclick="buyItem('item3')">ITEM 3 </button> <p>COST: -<span id="item3-price">3</span> | 4x</p>
+                                <button class="btn btn-warning" onclick="buyItem('item4')">ITEM 4</button>  <p>COST: -<span id="item4-price">4</span> | AUTO 100 p/s</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="inventory">
+                    <h2 class="inventory__title">INVENTORY</h2>
+                        <div class="inventory__stats border d-flex flex-column">
+                            <p class="count">TOTAL = <span id="total-points">0</span></p>
+                            <p class="item__1">ITEM 1: <span id="item1-total">0</span></p>
+                            <p class="item__1">ITEM 2: <span id="item2-total">0</span></p>
+                            <p class="item__1">ITEM 3: <span id="item3-total">0</span></p>
+                            <p class="item__1">ITEM 4: <span id="item4-total">0</span></p>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="container-fluid">
+        FOOTER
+    </footer>
+    
+
+    <script src="app.js"></script>
+</body>
+</html>
