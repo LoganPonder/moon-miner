@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Chango&family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap.min (10).css">
     <link rel="stylesheet" href="style.css">
@@ -10,66 +12,95 @@
 </head>
 <body>
     <header class="container-fluid">
-        HEADER
+        <!-- HEADER -->
     </header>
 
-    <main class="container-fluid bg-primary text-center text-white">
-        <!-- SCORE -->
-        <div class="row justify-content-center">
-            <div class="col-md-4">
-                <div class="stats__title  display-4">STATS</div>
-                <div class="stats border p-4">
-                    <p>POINTS PER SECOND: <span id="ppp">0</span></p>
-                    <p>CURRENT POINT MULTIPLIER: x<span id="multiplier">1</span></p>
-                </div>
-            </div>
+    <main class="container-fluid text-center text-white py-4">
 
-            <div class="col-md-4 display-4">
-                
+        <img src="./img/starfish.png" alt="starfish" class="starfish" draggable="false">
+        <img src="./img/squirt-final.png" alt="squirt" class="squirt" draggable="false">
+        <img src="./img/dori.png" alt="dori" class="dori" draggable="false">
+        <div class="hero-video">
+                    <video class="hero-video-content" autoplay muted loop>
+                        <source src="./img/jelly-fish-bg.mp4" type="video/mp4">
+                        <source src="./img/jelly-fish-bg.mp4" type="video/webm">
+                        Your browser is not supported.
+                    </video>
+                </div>
+        <!-- HEADER -->
+        <div class="row main-title">
+            <div class="col">
+                <h1 class="title py-4">NEMO<span>& FRIENDS</span></h1>
             </div>
         </div>
+        
         <!-- IMG -->
         <div class="row">
             <div class="col">
-                <img src="//placehold.it//300x400" alt="clickable-img" onclick="addPoint()">
+                <img src="./img/nemo2.png" alt="clickable-nemo" onclick="addPoint()" class="nemo my-4" draggable="false">
             </div>
         </div>
 
         <!-- ITEMS -->
-        <div class="row justify-content-center">
+        <div class="row justify-content-around">
             <div class="col-md-4">
-                <div class="upgrades">
-                    <h2 class="upgrades__title">UPGRADES</h2>
-                    <div class="upgrades__items border">
-                        <div class="upgrades__item d-flex justify-content-between p-4">
-                                <button class="btn btn-warning" onclick="buyItem('item1')">ITEM 1</button> <p>COST: -<span id="item1-price">1</span> | 2x</p>
-                                <button class="btn btn-warning" onclick="buyItem('item2')">ITEM 2</button> <p>COST: -<span id="item2-price">2</span> | 3x</p>
+                <div class="upgrades blue p-3 rounded shadow">
+                    <h2 class="upgrades__title title">UPGRADES</h2>
+                    <div class="upgrades__items border text">
+                        <div class="upgrades__item d-flex justify-content-start px-4">
+                            <div class="btn-group d-flex align-items-center justify-content-between p-2">
+                                <button class="btn btn-warning rounded mr-3 shadow btn-sm" onclick="buyItem('item1')">DORI</button> 
+                                <p class="mt-3">COST: -<span id="item1-price">1</span> | 1x</p>
+                            </div>
+                             <div class="btn-group d-flex align-items-center justify-content-between p-2 ml-3">
+                                <button class="btn btn-warning rounded mr-3 shadow btn-sm" onclick="buyItem('item2')">CRUSH</button> <p class="mt-3">COST: -<span id="item2-price">2</span> | 2x</p>
+                             </div>
+                            
                         </div>
-                        <div class="upgrades__item d-flex justify-content-between p-4">
-                                <button class="btn btn-warning" onclick="buyItem('item3')">ITEM 3 </button> <p>COST: -<span id="item3-price">3</span> | 4x</p>
-                                <button class="btn btn-warning" onclick="buyItem('item4')">ITEM 4</button>  <p>COST: -<span id="item4-price">4</span> | AUTO 100 p/s</p>
+                        <div class="upgrades__item d-flex justify-content-between px-4">
+                            <div class="btn-group d-flex align-items-center justify-content-between p-2">
+                                <button class="btn btn-warning rounded mr-3 shadow btn-sm" onclick="buyItem('item3')">SQUIRT</button> 
+                                <p class="mt-3">COST: -<span id="item3-price">3</span> | 3x</p>
+                            </div>
+                            <div class="btn-group d-flex align-items-center justify-content-between p-2">
+                                <button class="btn btn-warning rounded mr-3 shadow btn-sm" onclick="buyItem('item4')">MARLIN</button>  
+                                <div class="text d-flex flex-column text-left">
+                                <p class="mt-3 mb-0">COST: -<span id="item4-price">4</span></p>
+                                <p class="mt-0">AUTOMATIC 5+|5x</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4">
-                <div class="inventory">
-                    <h2 class="inventory__title">INVENTORY</h2>
-                        <div class="inventory__stats border d-flex flex-column">
-                            <p class="count">TOTAL = <span id="total-points">0</span></p>
-                            <p class="item__1">ITEM 1: <span id="item1-total">0</span></p>
-                            <p class="item__1">ITEM 2: <span id="item2-total">0</span></p>
-                            <p class="item__1">ITEM 3: <span id="item3-total">0</span></p>
-                            <p class="item__1">ITEM 4: <span id="item4-total">0</span></p>
+            <div class="col-md-3">
+                <div class="inventory blue p-3 rounded shadow">
+                    <h2 class="inventory__title title">INVENTORY</h2>
+                        <div class="inventory__stats border d-flex flex-column p-1 text">
+                            <p class="count text-size">TOTAL JELLYFISH = <span id="total-points">0</span></p>
+                            <p class="item__1 text-size">DORI: <span id="item1-total">0</span></p>
+                            <p class="item__1 text-size">CRUSH: <span id="item2-total">0</span></p>
+                            <p class="item__1 text-size">SQUIRT: <span id="item3-total">0</span></p>
+                            <p class="item__1 text-size">MARLIN: <span id="item4-total">0</span></p>
                         </div>
                 </div>
             </div>
+ 
+            <div class="col-md-4">
+                <div class="blue p-3 rounded shadow">
+                    <h2 class="stats__title title">STATS</h2>
+                    <div class="stats border px-4 pt-3 text">
+                        <p class="text-size">AUTOMATIC JELLYFISH: <span id="ppp">0</span></p>
+                        <p class="text-size">JELLYFISH MULTIPLIER: x<span id="multiplier">1</span></p>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </main>
 
-    <footer class="container-fluid">
-        FOOTER
+    <footer class="container-fluid text-center">
     </footer>
     
 
