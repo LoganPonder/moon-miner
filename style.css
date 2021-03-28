@@ -53,6 +53,7 @@ main {
     max-width: 275px;
     z-index: 10;
     transform: rotate(-30deg);
+    // animation: rotate 5s ease infinite;
 }
 
 .squirt {
@@ -70,6 +71,7 @@ main {
     right: 25%;
     max-width: 145px;
     z-index: 12;
+    // animation: dori 2s ease infinite;
 }
 
 .blue {
@@ -118,4 +120,30 @@ button {
     }
 }
 
-@keyframes rotate
+@keyframes rotate {
+    0% {
+        transform: rotate(-30deg);
+    }
+
+    50% {
+        transform: rotate(-20deg);
+    }
+
+    100% {
+        transform: rotate(-30deg);
+    }
+}
+
+@keyframes dori {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0)
+    }
+}
