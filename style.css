@@ -53,7 +53,10 @@ main {
     max-width: 275px;
     z-index: 10;
     transform: rotate(-30deg);
-    // animation: rotate 5s ease infinite;
+}
+
+.starfish:hover {
+    animation: rotate 2s ease infinite;
 }
 
 .squirt {
@@ -71,7 +74,10 @@ main {
     right: 25%;
     max-width: 145px;
     z-index: 12;
-    // animation: dori 2s ease infinite;
+}
+
+.dori:hover {
+    animation: dori 2s ease infinite;
 }
 
 .blue {
@@ -86,8 +92,34 @@ h1 {
 h1 span {
     font-size: .8rem;
 }
+
 button {
     max-width: 100px;
+}
+
+button:hover {
+    filter: brightness(110%);
+    cursor: pointer;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.btn-custom {
+    background-color: rgb(255, 161, 20);
+    outline: none;
+    color: #fff;
+    border: none;
+    text-shadow: .5px .5px black;
+}
+
+.btn-blue {
+    background-color: rgb(0, 147, 245);
+    outline: none;
+    color: #fff;
+    border: none;
+    text-shadow: .5px .5px black;
 }
 
 .nemo {
